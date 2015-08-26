@@ -52,3 +52,5 @@ $ip = new Artdarek\RealIP()
 	->detect()
 	->get();
 ```
+
+For more usage examples go to ```examples``` folder.
