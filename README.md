@@ -8,7 +8,7 @@ Real IP is a Simple PHP library that let you detect real user IP address.
 
 ## Installation
 
-Just clone/copy this library to your project.
+Just clone/copy this library into your project libraries directory.
 
 ## Usage
 
@@ -24,11 +24,11 @@ create new instance:
 	$ip = new Artdarek\RealIP();
 ```
 
-you can set some stuff:
+you can set some additional options:
 
 ```php
-	$ip->setDefault('Not found');
-	$ip->setMethod('getenv');
+	$ip->setDefault('Not found'); // default string that will be returned if IP is not detected
+	$ip->setMethod('getenv'); // possible values getenv/server - how to get IP address, using getenv() php function or $_SERVER variable
 ```
 
 at the and call detect method:
@@ -46,9 +46,9 @@ and print results (detectd IP address):
 You can also chain all methods:
 
 ```php
-$ip = new Artdarek\RealIP()
-	->setDefault('Not found')
-    ->setMethod('getenv')
-    ->detect()
-	->get();
+	$ip = new Artdarek\RealIP()
+		->setDefault('Not found')
+    	->setMethod('getenv')
+    	->detect()
+		->get();
 ```
